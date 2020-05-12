@@ -1,0 +1,14 @@
+.message-view {
+  text-align: left;
+  background-color: rgb(85, 194, 224);
+  padding-top: 10px;
+  min-height: 100px;
+
+  .col {
+    min-height: 5em;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,25 @@
+.messages-table {
+  text-align: left;
+  min-height: 300px;
+
+  .table-header > div {
+    text-align: center;
+    color: white;
+    background-color: rgb(85, 194, 224);
+    border-right: solid 1px white;
+  }
+
+  .col-checkbox {
+    display: flex;
+    justify-content: center;
+
+    input {
+      position: static;
+      margin-left: 0em;
+    }
+  }
+
+  .col-loading {
+    text-align: center;
+  }
+}
