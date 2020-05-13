@@ -87,7 +87,7 @@ You also can install it via [yarn](https://classic.yarnpkg.com/en/).
 yarn add --dev react-redux-stethoscope
 ```
 
-This library has `peerDependencies` listings for `react` and `react-dom`.
+This library has `peerDependencies` listings for `react`, `react-dom` and `redux`.
 
 ## Set-up
 React-Redux Stethoscope requires a set-up before your tests run with it. It can be done by just calling `useStethoscope()` once. If you use Jest, then add this function call in setupTests.js or setupTests.ts.
