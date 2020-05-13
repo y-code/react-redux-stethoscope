@@ -97,4 +97,4 @@ Then, in your test code, instantiate Stethoscope and make sure to add the Redux 
 Now, Stethoscope is ready to call `listenAsync()` to test each action dispatch.
 
 ## Usage with Enzyme
-You can also use [Enzyme](https://enzymejs.github.io/enzyme/) to render react components and simulate operations with React-Redux Stethoscope. The set-up and usage of Stethoscope are all in the same manner.
+You can also use [Enzyme](https://enzymejs.github.io/enzyme/) with React-Redux Stethoscope, to render react components and simulate operations. The set-up and usage of Stethoscope are all in the same manner.
