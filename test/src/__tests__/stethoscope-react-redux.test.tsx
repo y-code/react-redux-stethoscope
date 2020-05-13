@@ -19,7 +19,7 @@ describe('Stethoscope with react-redux', () => {
     configureFetch()
   })
 
-  afterEach(fetch.restore)
+  afterEach(() => fetch.restore())
   afterAll(fetchMock.dontMock)
 
   it('calls back when all the connected React components finished re-render for the first action. [React Testing Library]', async () => {
