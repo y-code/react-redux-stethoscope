@@ -15,10 +15,10 @@
     "reactstrap": "file:../node_modules/reactstrap",
     "redux": "file:../node_modules/redux",
     "redux-actions": "file:../node_modules/redux-actions",
-    "redux-thunk": "file:../node_modules/redux-thunk",
-    "sinon": "file:../node_modules/sinon"
+    "redux-thunk": "file:../node_modules/redux-thunk"
   },
   "devDependencies": {
+    "@testing-library/react": "file:../node_modules/@testing-library/react",
     "@testing-library/jest-dom": "file:../node_modules/@testing-library/jest-dom",
     "@types/enzyme": "file:../node_modules/@types/enzyme",
     "@types/enzyme-adapter-react-16": "file:../node_modules/@types/enzyme-adapter-react-16",
@@ -27,7 +27,6 @@
     "@types/reactstrap": "file:../node_modules/@types/reactstrap",
     "@types/redux-actions": "file:../node_modules/@types/redux-actions",
     "@types/redux-thunk": "file:../node_modules/@types/redux-thunk",
-    "@types/sinon": "file:../node_modules/@types/sinon",
     "enzyme": "file:../node_modules/enzyme",
     "enzyme-adapter-react-16": "file:../node_modules/enzyme-adapter-react-16",
     "fetch-mock": "file:../node_modules/fetch-mock",
