@@ -1,7 +1,7 @@
 # React-Redux Stethoscope
 A testing utility for React-Redux apps that provides hooks to run tests after each redux action.
 
-[![npm version](https://badge.fury.io/js/react-redux-stethoscope.svg)](https://badge.fury.io/js/react-redux-stethoscope)
+[![npm version](https://badge.fury.io/js/react-redux-stethoscope.svg)](https://badge.fury.io/js/react-redux-stethoscope) ![Node.js CI](https://github.com/y-code/react-redux-stethoscope/workflows/Node.js%20CI/badge.svg?branch=master)
 
 ## The problem to solve
 When you want to test a React component after an operation that dispatches a Redux action, you need to make it sure that before your test code goes, all the React components connected to the Redux store are thoroughly updated based on the new state. You can easily assure it with `act()` provided by [React Test Utility](https://reactjs.org/docs/test-utils.html#act) or [Testing Library for React](https://testing-library.com/docs/react-testing-library/api#act).
