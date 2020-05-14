@@ -1,4 +1,4 @@
-import { act } from '@testing-library/react'
+import { act } from 'react-dom/test-utils'
 import { Middleware, AnyAction, Dispatch } from 'redux'
 import AsyncLock from 'async-lock'
 import logger from './logger'

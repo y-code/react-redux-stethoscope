@@ -10,16 +10,18 @@ import { Stethoscope } from 'react-redux-stethoscope'
 import { mount } from 'enzyme'
 import { AppState } from '../store'
 import fetch from 'fetch-mock'
-import logger from '../logger'
+import { getLogger } from 'log4js'
 
 describe('Stethoscope with react-redux', () => {
+
+  const logger = getLogger('React-Redux Stethoscope Tests')
 
   beforeEach(() => {
     fetchMock.doMock
     configureFetch()
   })
 
-  afterEach(fetch.restore)
+  afterEach(() => fetch.restore())
   afterAll(fetchMock.dontMock)
 
   it('calls back when all the connected React components finished re-render for the first action. [React Testing Library]', async () => {
