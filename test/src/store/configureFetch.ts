@@ -1,6 +1,5 @@
 import fetchMock from 'fetch-mock'
 import * as store from '.'
-import logger from '../logger'
 
 const url2polling = /^\/api\/inbox\/polling$/
 const url2messages = /^\/api\/inbox\/messages$/
@@ -8,7 +7,6 @@ const url2messages = /^\/api\/inbox\/messages$/
 export default function configureFetch() {
   fetchMock.mock(url2polling, async (url, req) => {
     const counter = fetchMock.calls(url2polling).length % 5
-    logger.info(`[Fetch Mock] received an expected request to ${url} (${counter})`)
 
     return {
       status: 200,
@@ -20,7 +18,6 @@ export default function configureFetch() {
 
   fetchMock.mock(url2messages, async (url, req) => {
     const counter = fetchMock.calls(url2messages).length
-    logger.info(`[Fetch Mock] received an expected request to ${url} (${counter})`)
 
     const data: store.Message[] = [
       {
