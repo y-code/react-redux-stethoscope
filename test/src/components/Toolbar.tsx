@@ -15,7 +15,7 @@ const Toolbar = function (props: ToolbarProps & typeof thunkCreators.inbox & Inb
 
   return (
     <div className="toolbar">
-      <Button onClick={requestMessages} data-key="btn-get-messages">&#x21BA;</Button>
+      <Button onClick={requestMessages} data-testid="btn-get-messages">&#x21BA;</Button>
     </div>
   )
 }
