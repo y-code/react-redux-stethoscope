@@ -42,7 +42,7 @@ const MessagesTable = (props: MessagesTableProps & AppState & typeof thunkCreato
         } else if (props.inbox.messages.loading){
           return (
             <Row className="table-row">
-              <Col className="col-loading">
+              <Col className="col-loading" data-testid="message.loading">
                 Loading...
               </Col>
             </Row>
@@ -75,7 +75,7 @@ const MessagesTable = (props: MessagesTableProps & AppState & typeof thunkCreato
                 <Col xs={4}>
                   {message.from}
                 </Col>
-                <Col xs={7} data-key="message.subject">
+                <Col xs={7} data-testid="message.subject">
                   {message.subject}
                 </Col>
               </Row>

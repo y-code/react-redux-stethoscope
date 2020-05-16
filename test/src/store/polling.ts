@@ -42,12 +42,13 @@ export const thunkCreators = {
       )
       .then(json => {
         if ((json as InboxPolling).messages) {
+          dispatch(actionCreators.receiveInboxPolling(json))
           return ((dispatch(appThunkCreators.inbox.requestMessages()) as any) as Promise<AnyAction>)
             .then(() => dispatch(actionCreators.resetInboxPolling()))
-        }
-        return Promise.resolve(
+        } else {
           dispatch(actionCreators.receiveInboxPolling(json))
-        )
+          return dispatch(actionCreators.resetInboxPolling())
+        }
       })
   },
 }
