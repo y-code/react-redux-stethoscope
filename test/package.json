@@ -6,7 +6,8 @@
   "dependencies": {
     "bootstrap": "^4.5.0",
     "fetch-mock": "^9.9.0",
-    "node-sass": "file:../node_modules/node-sass",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -28,13 +29,14 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest-fetch-mock": "^3.0.3",
-    "log4js": "^6.2.1"
+    "log4js": "^6.2.1",
+    "typescript": "^3.9.2"
   },
   "scripts": {
-    "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
-    "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
-    "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
-    "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
