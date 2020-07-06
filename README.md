@@ -4,7 +4,7 @@ A testing utility for React-Redux apps that provides hooks to run tests after ea
 [![npm version](https://badge.fury.io/js/react-redux-stethoscope.svg)](https://badge.fury.io/js/react-redux-stethoscope) ![Node.js CI](https://github.com/y-code/react-redux-stethoscope/workflows/Node.js%20CI/badge.svg?branch=master)
 
 ## The problem to solve
-When you want to test a React component after an operation that dispatches a Redux action, you need to make it sure that before your test code goes, all the React components connected to the Redux store are thoroughly updated based on the new state. You can easily assure it with `act()` provided by [React Test Utility](https://reactjs.org/docs/test-utils.html#act) or [Testing Library for React](https://testing-library.com/docs/react-testing-library/api#act).
+When you want to test a React component after an operation that dispatches a Redux action, you need to make it sure that before your test code goes on, all the React components connected to the Redux store are thoroughly updated based on the new state. We can easily assure it with `act()` provided by [React Test Utility](https://reactjs.org/docs/test-utils.html#act) or [Testing Library for React](https://testing-library.com/docs/react-testing-library/api#act).
 
 However, it cannot help when a test target operation dispatches Redux actions asynchronously, like the thunk action below.
 
@@ -12,13 +12,13 @@ However, it cannot help when a test target operation dispatches Redux actions as
 export const thunkCreators = {
   requestMessages: () =>
     (dispatch, getState) => {
-      // action dispatch before the fetch
+      // Synchronous action dispatch
       dispatch(actionCreators.requestMessages())
 
       return fetch('/api/inbox/messages', { method: 'GET' })
         .then(response => response.json())
         .then(json => {
-          // action dispatch after the fetch
+          // Asynchronous action dispatch
           return dispatch(actionCreators.receiveMessages(json))
         })
     },
@@ -55,20 +55,19 @@ it('display "Loading..." while fetching data.', async () => {
       {
         actionType: actionCreators.requestMessages().type,
         onUpdated: () => {
-          const loadingMessage = wrapper.getAllByText('Loading...')
-          expect(loadingMessage).toHaveLength(1)
+          expect(wrapper.queryAllByText('Loading...')).toHaveLength(1)
         }
       },
       {
         actionType: actionCreators.receiveMessages({}).type,
         onUpdated: () => {
-          const firstMessage = wrapper.getAllByText('Hello, World')
-          expect(firstMessage).toHaveLength(1)
+          expect(wrapper.queryByText('Loading...')).toBeNull()
+          expect(wrapper.queryAllByText('Hello, World')).toHaveLength(1)
         }
       },
     ]
   })
-}
+})
 ```
 
 `listenAsync()` function runs `act` property of its parameter object over the [`act()` of React Test Utility](https://reactjs.org/docs/test-utils.html#act), and waits for a Redux action to be dispatched. When the dispatched action matches one of the action types specified in the `targets` property, Stethoscope calls back the function in the corresponding `onUpdated` property. `listenAsync()` keeps waiting until all the action types in the `targets` are dispatched.
