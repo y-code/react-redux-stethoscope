@@ -1,6 +1,6 @@
 {
   "name": "react-redux-stethoscope",
-  "version": "1.0.0-beta.4",
+  "version": "1.0.0",
   "description": "A testing utility for React-Redux apps that provides hooks to run tests after each redux action.",
   "author": "y-code",
   "license": "MIT",
